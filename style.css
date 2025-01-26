@@ -25,6 +25,12 @@ ul {
 
 .todo {
     font-size: 1.25rem;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.cs-input {
+    width: 100%;
 }
 
 .delete-btn {
@@ -111,4 +117,211 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Base styles */
+body {
+    font-family: 'sans-serif';
+    padding: 2rem;
+    height: 100vh;
+    background: #1a1a1a;
+    color: #e1e1e1;
+    margin: 0;
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+    body {
+        padding: 1.5rem 0%;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0 0.5rem;
+    }
+
+    .cs-input {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .cs-btn {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .cs-dialog {
+        width: 90% !important;
+        left: 5% !important;
+        transform: translate(0, -50%) !important;
+    }
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        padding: 1.5rem 0%;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .todos {
+        height: 300px;
+        overflow-y: scroll;
+    }
+
+    .todo {
+        font-size: 2rem !important;
+    }
+
+    label span {
+        line-height: 2rem;
+        margin: 0 1rem 0 1rem;
+    }
+
+    .cs-checkbox__label::before {
+        height: 3rem !important;
+        width: 3rem !important;
+    }
+    .cs-checkbox {
+        & input {
+            &:checked+.cs-checkbox__label:before {
+                background-size: 90% !important;
+            }
+        }
+    }
+
+    .container {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .cs-input {
+        font-size: 4rem !important;
+    }
+
+    .cs-dialog {
+        width: 70% !important;
+    }
+
+    .cs-btn {
+        font-size: 4rem !important;
+        width: 200px;
+        height: 75px;
+    }
+
+
+    .cs-btn.delete-btn {
+        height: initial !important;
+        width: initial !important;
+        font-size: 2rem !important;
+    }
+
+    .footer {
+        bottom: 0rem !important;
+        font-size: 3rem !important;
+    }
+
+    .footer .cs-progress-text {
+        font-size: 3rem !important;
+    }
+
+    .footer .cs-progress-bar {
+        width: auto !important;
+        height: 4rem;
+    }
+}
+
+/* Large screens (desktop) */
+@media (min-width: 1025px) {
+    body {
+        padding: 2rem 25%;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .todos {
+        height: 400px;
+        overflow-y: scroll;
+    }
+
+    .cs-dialog {
+        width: 400px !important;
+    }
+}
+
+
+/* Responsive input group */
+.input-container {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 480px) {
+    .input-container {
+        flex-direction: column;
+    }
+}
+
+/* Responsive progress bar */
+.cs-progress-bar {
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        margin: 0 2rem;
+    }
+
+    .cs-btn.delete-btn {
+        font-size: 1rem !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .cs-progress-text {
+        font-size: 12px;
+    }
+
+    .cs-checkbox__label::before {
+        height: 2rem !important;
+        width: 2rem !important;
+    }
+
+    .cs-checkbox {
+        & input {
+            &:checked+.cs-checkbox__label:before {
+                background-size: 90% !important;
+            }
+        }
+    }
+
+    .todos {
+        height: 200px;
+        overflow-y: scroll;
+    }
+    
+}
+
+/* Footer responsiveness */
+.cs-footer {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .cs-footer {
+        font-size: 0.7rem;
+    }
 }
