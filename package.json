@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "elm-format": "^0.8.7",
+    "json-decode": "^0.3.0"
+  }
+}

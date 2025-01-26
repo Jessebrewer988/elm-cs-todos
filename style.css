@@ -1,0 +1,114 @@
+body {
+    font-family: 'sans-serif';
+
+    padding: 25% 25% 0% 25%;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+
+hr {
+    margin: 5px;
+}
+
+ul {    
+    list-style: none;
+    padding: 0;
+}
+
+.todo {
+    font-size: 1.25rem;
+}
+
+.delete-btn {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+.modal-header .close {
+    display: none;
+}
+
+.dialog-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(2px);
+}
+
+.cs-dialog {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1000 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.content {
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a #2d2d2d;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 4px;
+}
+
+.cs-progress-bar {
+    background: #2d2d2d;
+    border: 2px solid #4a4a4a;
+    height: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.cs-progress-bar .bars {
+
+    transition: width 0.3s ease;
+}
+
+.cs-progress-text {
+    color: #e1e1e1;
+    font-size: 14px;
+    margin: 8px 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#input {
+    width: 82% !important;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

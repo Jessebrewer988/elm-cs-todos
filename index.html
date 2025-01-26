@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/ekmas/cs16.css@main/css/cs16.min.css"
+    />
+    <title>Elm Todos</title>
+  </head>
+  <body>
+    <div id="elm-app"></div>
+    <script src="elm.js"></script>
+    <script defer>
+      const storedTodos = localStorage.getItem("elmTodos");
+      const initialTodos = storedTodos ? JSON.parse(storedTodos) : null;
+
+      const app = Elm.Main.init({
+        node: document.getElementById("elm-app"),
+        flags: initialTodos,
+      });
+
+      app.ports.saveTodos.subscribe(function (todos) {
+        localStorage.setItem("elmTodos", JSON.stringify(todos));
+      });
+    </script>
+  </body>
+</html>
